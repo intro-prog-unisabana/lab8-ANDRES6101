@@ -3,11 +3,9 @@
 
 Implementa una CLI que calcule carga por punto de soporte.
 """
-
 import sys
 
 try:
-    
     if len(sys.argv) != 3:
         print("Error: Invalid input! Enter numeric values only.")
     else:

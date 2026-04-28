@@ -7,6 +7,7 @@ try:
     if len(sys.argv) < 2:
         raise IndexError("Insufficient arguments provided!")
 
+  
     if sys.argv[1] == "--help":
         print("""Usage: python main.py <file_path> <command> [arguments]...
 
@@ -24,11 +25,10 @@ Examples:
 
     file_path = sys.argv[1]
 
-    
     tasks = read_todo_file(file_path)
 
     i = 2
-    modified = False  
+    modified = False
 
     while i < len(sys.argv):
         command = sys.argv[i]
@@ -57,12 +57,13 @@ Examples:
                 print(f'Task "{task}" not found.')
             i += 2
 
+        
         elif command == "view":
-            print("Tasks:")
-            for task in tasks:
-                print(task)
+            if tasks:
+                print("Tasks:")
+                for task in tasks:
+                    print(task)
             i += 1
-
         else:
             raise ValueError("Command not found!")
 
