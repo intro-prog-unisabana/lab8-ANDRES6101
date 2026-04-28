@@ -3,7 +3,7 @@ Lab 8
 /****************************************************************************
 * Número aproximado de horas para completar esta tarea
 ******************************************************************************/
-Número de horas:
+Número de horas: 5
 
 
 /****************************************************************************
@@ -12,6 +12,8 @@ Número de horas:
 
 ¿Sí o no?
 
+si, no pude enviar la tarea a tiempo debido a que VScode me arrojaba que no tenia permiso
+para subir los archivos
 
 /****************************************************************************
 * Escribe cualquier otro comentario aquí.
@@ -23,7 +25,7 @@ Número de horas:
  *  Proporciona el enlace de tu perfil de GitHub (ej. https://github.com/afbeltranp)
  ******************************************************************************/
 
-[escribe el enlace aquí]
+https://github.com/intro-prog-unisabana/lab8-ANDRES6101.git
 
 /****************************************************************************
  *  Escribe y firma el siguiente reconocimiento estudiantil de trabajo original.
@@ -34,4 +36,5 @@ Número de horas:
  *      con las regulaciones de la Universidad.  /s/ Ada Lovelace
  ******************************************************************************/
 
-[escribe y firma la declaración aquí]
+Esta tarea de programación representa mi propio trabajo de acuerdo
+     con las regulaciones de la Universidad.  /s/ Sergio Tiria.
