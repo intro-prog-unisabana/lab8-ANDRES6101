@@ -1,6 +1,6 @@
 """Laboratorio 8 - Módulo de persistencia para lista de tareas."""
-
 def read_todo_file(file_path):
+    """Reads tasks from a file. Returns a list of tasks."""
     try:
         with open(file_path, 'r') as file:
             return file.read().splitlines()
@@ -8,10 +8,9 @@ def read_todo_file(file_path):
         print(f"File {file_path} not found! Returning an empty to-do list.")
         return []
 
+
 def write_todo_file(file_path, tasks):
-    try:
-        with open(file_path, 'w') as file:
-            for task in tasks:
-                file.write(task + '\n')
-    except Exception as e:
-        print(f"An error occurred while writing to the file: {e}")
+    """Writes tasks to a file, one per line."""
+    with open(file_path, 'w') as file:
+        for task in tasks:
+            file.write(task + '\n')

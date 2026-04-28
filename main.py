@@ -3,11 +3,10 @@ import sys
 from todo_manager import read_todo_file, write_todo_file
 
 try:
-    # -------- VALIDACIÓN INICIAL --------
+    
     if len(sys.argv) < 2:
         raise IndexError("Insufficient arguments provided!")
 
-    # -------- HELP --------
     if sys.argv[1] == "--help":
         print("""Usage: python main.py <file_path> <command> [arguments]...
 
@@ -25,15 +24,16 @@ Examples:
 
     file_path = sys.argv[1]
 
-    # -------- LEER UNA SOLA VEZ --------
+    
     tasks = read_todo_file(file_path)
 
-    i = 2  # empezamos desde el primer comando
+    i = 2
+    modified = False  
 
     while i < len(sys.argv):
         command = sys.argv[i]
 
-        # -------- ADD --------
+        
         if command == "add":
             if i + 1 >= len(sys.argv):
                 raise IndexError('Task description required for "add".')
@@ -41,9 +41,9 @@ Examples:
             task = sys.argv[i + 1]
             tasks.append(task)
             print(f'Task "{task}" added.')
+            modified = True
             i += 2
 
-        # -------- REMOVE --------
         elif command == "remove":
             if i + 1 >= len(sys.argv):
                 raise IndexError('Task description required for "remove".')
@@ -52,23 +52,22 @@ Examples:
             try:
                 tasks.remove(task)
                 print(f'Task "{task}" removed.')
+                modified = True
             except ValueError:
                 print(f'Task "{task}" not found.')
             i += 2
 
-        # -------- VIEW --------
         elif command == "view":
             print("Tasks:")
             for task in tasks:
                 print(task)
             i += 1
 
-        # -------- COMANDO INVÁLIDO --------
         else:
             raise ValueError("Command not found!")
 
-    # -------- ESCRIBIR UNA SOLA VEZ --------
-    write_todo_file(file_path, tasks)
+    if modified:
+        write_todo_file(file_path, tasks)
 
 except IndexError as e:
     print(e)
